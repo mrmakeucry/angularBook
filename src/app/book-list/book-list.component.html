@@ -2,15 +2,7 @@
 
 <ul class="book-list">
     <li *ngFor="let book of books">
-        <div class="list-item">
-            <img [src]="book.thumbnailURL" *ngIf="book.thumbnailURL" alt="Cover">
-            <h1>{{ book.title }}</h1>
-            <p role="doc-subtitle" *ngIf="book.subtitle">{{ book.subtitle }}</p>
-            <ul class="comma-list">
-                <li *ngFor="let author of book.authors">{{ author }}</li>
-            </ul>
-            <div>ISBN: {{ book.isbn }}</div>
-        </div>
+        <bm-book-list-item [book]="book"></bm-book-list-item>
     </li>
     <li *ngIf="!books.length">
         No Books Available
